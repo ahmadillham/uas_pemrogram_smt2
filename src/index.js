@@ -70,6 +70,7 @@ app.post("/page/delete/:id", async (req, res) => {
 // root redirect
 app.get("/", (req, res) => res.redirect("/page"));
 
-app.listen(7000, () => {
-  console.log(`Server running at http://localhost:7000`);
-});
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, "0.0.0.0", () =>
+  console.log(`Server listening on port ${PORT}`)
+);
